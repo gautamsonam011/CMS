@@ -54,14 +54,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'CMS.urls'
 
-from pathlib import Path
-
-BASE_DIR = Path(__file__).resolve().parent.parent
+import os
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [os.path.join(SETTINGS_PATH, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

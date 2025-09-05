@@ -8,5 +8,5 @@ urlpatterns = [
     path("client/", views.client_request_response), 
     path("add/", views.request_add_two_numbers),
     path('message/', views.request_message),
-    path('first/', views.my_first_template)
+    path('template/', views.my_first_template)
 ]
