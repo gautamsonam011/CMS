@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        .cal {
+            margin-top: 10%;
+            margin-left: 40%;
+        }
+        .cal input {
+            width: 40px;
+            height: 40px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <div class="cal">
+            <input type="submit" name="btn1" value="1">
+            <input type="submit" name="btn2" value="2">
+            <input type="submit" name="btn3" value="3">
+            <br/>
+            <input type="submit" name="btn4" value="4">
+            <input type="submit" name="btn5" value="5">
+            <input type="submit" name="btn6" value="6">
+            <br/>
+            <input type="submit" name="btn7" value="7">
+            <input type="submit" name="btn8" value="8">
+            <input type="submit" name="btn9" value="9">
+            <br/>
+            <input type="submit" name="btn0" value="0">
+            <input type="submit" name="btnsum" value="+">
+            <input type="submit" name="btnsub" value="-">
+            <br/>
+            <input type="submit" name="btndiv" value="/">
+            <input type="submit" name="btnmult" value="*">
+            <input type="submit" name="btnmod" value="%">
+        </div>
+    </form>
+
+    <h2>Result: {{ res }}</h2>
+</body>
+</html>

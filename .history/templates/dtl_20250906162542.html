@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Template Language</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <!-- If condition  -->
+
+        {% if sum is not none %}
+        <h1>Value is {{sum}}</h1>
+        {% endif %}
+
+        <!-- For loop  -->
+
+        {% for i in techno %}
+
+        <h1>Technologies {{i}}</h1>
+
+        {% endfor %}
+
+    </form>
+    
+</body>
+</html>

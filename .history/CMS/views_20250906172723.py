@@ -41,30 +41,27 @@ def my_about_page(request):
     # # Handle GET request
     # return render(request, "about.html")        
 
-
 def calculator_view(request):
-    expression = ""
-    result = ""
-
+    res = ""
     if request.method == "POST":
-        expression = request.POST.get("expression", "")
+        for i in range(10):  
+            btn = f"btn{i}"
+            if btn in request.POST:
+                res = str(i)
 
-        if "btn" in request.POST:  
-            expression += request.POST["btn"]
+        if 'btnsum' in request.POST:
+            res = "+"
+        elif 'btnsub' in request.POST:
+            res = "-"
+        elif 'btnmult' in request.POST:
+            res = "*"
+        elif 'btndiv' in request.POST:
+            res = "/"
+        elif 'btnmod' in request.POST:
+            res = "%"
 
-        elif "clear" in request.POST:  
-            expression = ""
-            result = ""
+    return render(request, "calculator.html", {"res": res})
 
-        elif "equal" in request.POST: 
-            try:
-                result = str(eval(expression))
-                expression = result  
-            except:
-                result = "Error"
-                expression = ""
-
-    return render(request, "calculator.html", {"expression": expression, "result": result})
 
 def dtl_func(request):
     a = 67

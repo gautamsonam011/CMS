@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Template Language</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <!-- If condition  -->
+
+        {% if sum is not none %}
+        <h1>Value is {{sum}}</h1>
+        {% endif %}
+
+        <!-- For loop  -->
+
+        {% for i in techno %}
+
+        <h1>{{forloop.counter}} Technology {{i}}</h1>
+
+        {% endfor %}
+
+        <table>
+            <tr>
+            <th>S.No</th>
+            <th>Student Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            </tr>
+            <tr>
+                <td>{{forloop.counter}}</td>
+                {% for i in student_name %}
+                <td>{{i}}</td>
+                {% endfor %}
+                {% for i in student_age %}
+                <td>{{i}}</td>
+                {% endfor %}
+                {% for i in student_address %}
+                <td>{{i}}</td>
+                {% endfor %}
+            </tr>
+
+        </table>
+
+    </form>
+    
+</body>
+</html>

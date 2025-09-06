@@ -41,48 +41,8 @@ def my_about_page(request):
     # # Handle GET request
     # return render(request, "about.html")        
 
-
 def calculator_view(request):
-    expression = ""
-    result = ""
-
-    if request.method == "POST":
-        expression = request.POST.get("expression", "")
-
-        if "btn" in request.POST:  
-            expression += request.POST["btn"]
-
-        elif "clear" in request.POST:  
-            expression = ""
-            result = ""
-
-        elif "equal" in request.POST: 
-            try:
-                result = str(eval(expression))
-                expression = result  
-            except:
-                result = "Error"
-                expression = ""
-
-    return render(request, "calculator.html", {"expression": expression, "result": result})
-
-def dtl_func(request):
-    a = 67
-    b = 87
-    sum = a+b
-    l = ["Python", "Java", "PHP", "C#","HTML"]
-    
-    student_name = ["Ram", "Ankit", "Raj", "Geeta", "Rita"] 
-    student_age = [14, 13, 15, 16, 14]  
-    student_address = ["Delhi", "Kanpur", "Pune", "Mumbai", "Kolkata"] 
-
-    students = zip(student_name, student_age, student_address)
-    d = {
-        'sum':sum,
-        'techno': l,
-        'students': students,
-        }
-    return render(request, 'dtl.html', d)
-
-
-
+    if request.method == "GET":
+        resp = render(request, 'calculator.html')    
+        return resp
+        

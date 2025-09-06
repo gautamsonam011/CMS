@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        .cal {
+            margin-top: 5%;
+            margin-left: 40%;
+        }
+        .cal input {
+            width: 60px;
+            height: 60px;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 3px;
+        }
+        .display {
+            width: 195px;
+            height: 50px;
+            font-size: 20px;
+            text-align: right;
+            margin-bottom: 10px;
+            padding-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <div class="cal">
+            <!-- display -->
+            <input type="text" name="expression" value="{{ expression }}" class="display" readonly>
+            <br/>
+
+            <!-- digits -->
+            <input type="submit" name="btn" value="7">
+            <input type="submit" name="btn" value="8">
+            <input type="submit" name="btn" value="9">
+            <input type="submit" name="btn" value="/">
+            <br/>
+            <input type="submit" name="btn" value="4">
+            <input type="submit" name="btn" value="5">
+            <input type="submit" name="btn" value="6">
+            <input type="submit" name="btn" value="*">
+            <br/>
+            <input type="submit" name="btn" value="1">
+            <input type="submit" name="btn" value="2">
+            <input type="submit" name="btn" value="3">
+            <input type="submit" name="btn" value="-">
+            <br/>
+            <input type="submit" name="btn" value="0">
+            <input type="submit" name="btn" value=".">
+            <input type="submit" name="equal" value="=">
+            <input type="submit" name="btn" value="+">
+            <br/>
+            <input type="submit" name="clear" value="C" style="width: 258px;">
+        </div>
+    </form>
+
+    {% if result %}
+        <h2 style="margin-left:40%;">Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>

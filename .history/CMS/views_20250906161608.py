@@ -41,48 +41,40 @@ def my_about_page(request):
     # # Handle GET request
     # return render(request, "about.html")        
 
-
 def calculator_view(request):
-    expression = ""
-    result = ""
+    list_buttons = ['btn1', 'btn2', 'btn3', 'btn4', 'btn5', 'btn6', 'btn7', 'btn8', 'btn9', 'btn0']
 
-    if request.method == "POST":
-        expression = request.POST.get("expression", "")
+    for b in list_buttons:
+        if b in request.POST:
+            return b[3]
+        return -1
+        
+    if request.method == "GET":
+        resp = render(request, 'calculator.html')    
+        return resp
 
-        if "btn" in request.POST:  
-            expression += request.POST["btn"]
+    elif request.method == "POST":
+        if 'btnsum' in request.POST:
+            res = b+b
+        elif 'btnsub' in request.POST:
+            res = b-b
+        elif 'btnmult' in request.POST:
+            res = b*b
+        elif 'btndiv' in request.POST:
+            res = b/b
+        elif 'btnmod' in request.POST:
+            res = b%b
 
-        elif "clear" in request.POST:  
-            expression = ""
-            result = ""
 
-        elif "equal" in request.POST: 
-            try:
-                result = str(eval(expression))
-                expression = result  
-            except:
-                result = "Error"
-                expression = ""
+    d = {'res':res}  
 
-    return render(request, "calculator.html", {"expression": expression, "result": result})
+    return render(request, context=d)  
 
-def dtl_func(request):
+
+def dtl_func(request, a, b):
     a = 67
     b = 87
     sum = a+b
-    l = ["Python", "Java", "PHP", "C#","HTML"]
-    
-    student_name = ["Ram", "Ankit", "Raj", "Geeta", "Rita"] 
-    student_age = [14, 13, 15, 16, 14]  
-    student_address = ["Delhi", "Kanpur", "Pune", "Mumbai", "Kolkata"] 
-
-    students = zip(student_name, student_age, student_address)
-    d = {
-        'sum':sum,
-        'techno': l,
-        'students': students,
-        }
+    d = {'sum':sum}
     return render(request, 'dtl.html', d)
-
-
 

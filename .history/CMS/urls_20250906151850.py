@@ -12,5 +12,4 @@ urlpatterns = [
     path('home/', views.my_home_page),
     path('about/', views.my_about_page),
     path('calculator/', views.calculator_view),
-    path('dtl/', views.dtl_func),
 ]
