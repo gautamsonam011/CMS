@@ -23,20 +23,7 @@ def my_about_page(request):
         print(request.POST)
 
         name = request.POST.get("name")
-        d = {
+        context = {
             'name': name
         }
-        return render(request, "about.html", context=d)
-
-# def my_about_page(request):
-    if request.method == "POST":
-        print(request.POST)
-
-        name = request.POST.get("name")
-        d = {
-            'name': name
-        }
-        return render(request, "about.html", context=d)
-    
-    # Handle GET request
-    return render(request, "about.html")        
+        return render(request, "about.html")

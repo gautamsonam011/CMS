@@ -16,27 +16,4 @@ def my_first_template(request):
     return render(request, 'firstfile.html')
 
 def my_home_page(request):
-    return render(request, 'home.html')
-
-def my_about_page(request):
-    if request.method == "POST":
-        print(request.POST)
-
-        name = request.POST.get("name")
-        d = {
-            'name': name
-        }
-        return render(request, "about.html", context=d)
-
-# def my_about_page(request):
-    if request.method == "POST":
-        print(request.POST)
-
-        name = request.POST.get("name")
-        d = {
-            'name': name
-        }
-        return render(request, "about.html", context=d)
     
-    # Handle GET request
-    return render(request, "about.html")        

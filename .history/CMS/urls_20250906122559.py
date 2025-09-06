@@ -9,6 +9,6 @@ urlpatterns = [
     path("add/", views.request_add_two_numbers),
     path('message/', views.request_message),
     path('first/', views.my_first_template),
-    path('home/', views.my_home_page),
+    path('home/', views.my_about_page),
     path('about/', views.my_about_page),
 ]
