@@ -7,4 +7,3 @@ class Customer(models.Model):
     lastname = models.CharField(max_length=20)
     mobileNumber = models.IntegerField(max_length=12)
     address = models.CharField(max_length=100)
-    
