@@ -13,13 +13,3 @@ class Member(models.Model):
     jobRole = models.CharField(max_length=20)
     mobileNumber = models.IntegerField(max_length=12)
     address = models.CharField(max_length=100)
-    joined_date = models.DateField(null=True)
-
-    def __str__(self):
-        return f"{self.memName}"
-
-class GroceryProducts(models.Model):
-    productName = models.CharField(max_length=70)       
-    productName = models.CharField(max_length=70)
-    cost = models.FloatField(null = True)
-    price = models.FloatField(null = True)

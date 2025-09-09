@@ -19,7 +19,4 @@ class Member(models.Model):
         return f"{self.memName}"
 
 class GroceryProducts(models.Model):
-    productName = models.CharField(max_length=70)       
-    productName = models.CharField(max_length=70)
-    cost = models.FloatField(null = True)
-    price = models.FloatField(null = True)
+    pass        

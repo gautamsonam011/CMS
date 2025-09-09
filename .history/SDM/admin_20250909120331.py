@@ -6,5 +6,5 @@ from .models import Member
 class MemberAdmin(admin.ModelAdmin):
     list_display = ("memName", "jobRole", "mobileNumber", "address", "joined_date")
 
-admin.site.register(Member, MemberAdmin)     #this is admin register  
+admin.site.register(Member, MemberAdmin)    
 
