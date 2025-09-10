@@ -5,7 +5,6 @@ from .models import Member, GroceryProducts
 
 class MemberAdmin(admin.ModelAdmin):
     list_display = ("memName", "jobRole", "mobileNumber", "address", "joined_date")
-    
 # class GroceryProductsAdmin(admin.ModelAdmin):
 #     list_display = ("productName")
 
