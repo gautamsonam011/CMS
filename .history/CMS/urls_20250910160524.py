@@ -14,6 +14,4 @@ urlpatterns = [
     path('calculator/', views.calculator_view),
     path('dtl/', views.dtl_func),
     path('postapi/', views.create_view),
-    path('create/', views.save_product),
-    path('update/<int:product_id>/', views.update_product),
 ]

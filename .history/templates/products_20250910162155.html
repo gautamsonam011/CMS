@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Enter your product name" name="productName"><br>
+        <input type="text" placeholder="Enter brand name " name="brandName"><br>
+        <input type="number" placeholder="Enter product cost" name="cost"><br>
+        <input type="number" placeholder="Enter product price" name="price"><br>
+        <input type="date" placeholder="Enter manufacturing date" name="manu_date"><br>
+        <input type="date" placeholder="expiry date" name="exp_date"><br>
+        <button type="submit" >Save Product </button>
+    </form>
+</body>
+</html>

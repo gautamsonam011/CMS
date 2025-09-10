@@ -1,7 +1,7 @@
 # Here write your logical code
 # This is a business logic layer 
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from SDM.models import GroceryProducts
 import json
 
@@ -103,60 +103,13 @@ def create_view(request):
                 'manu_date': grocery.manu_date,
                 'exp_date': grocery.exp_date,
 
-            }, status = 201)
+            })
         
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=400)
         
     return JsonResponse({'error': 'Only POST method allowed'}, status = 405)    
-
-# CRUD 
-# Create query 
-
-def save_product(request):
-    if request.method == "POST":
-        productName = request.POST.get('productName')
-        brandName = request.POST.get('brandName')
-        cost = request.POST.get('cost')
-        price = request.POST.get('price')
-        manu_date = request.POST.get('manu_date')
-        exp_date = request.POST.get('exp_date')
-
-        GroceryProducts.objects.create(
-            productName = productName,
-            brandName = brandName,
-            cost = cost,
-            price = price,
-            manu_date = manu_date,
-            exp_date = exp_date
-
-        )
         
-        return HttpResponse("Product saved successfully!")
-    return render(request, 'products.html')
-
-def update_product(request, product_id):
-    if request.method == "POST":
-        productName = request.POST.get('productName')
-        brandName = request.POST.get('brandName')
-        cost = request.POST.get('cost')
-        price = request.POST.get('price')
-        manu_date = request.POST.get('manu_date')
-        exp_date = request.POST.get('exp_date')
-
-        product = get_object_or_404(GroceryProducts, id = product_id)
-
-        product.productName = productName
-        product.brandName = brandName
-        product.cost = cost
-        product.price = price
-        product.manu_date = manu_date
-        product.exp_date = exp_date
-      
-        return HttpResponse("Product updated successfully!")
-    product = get_object_or_404(GroceryProducts, id = product_id)
-    return render(request, 'updateProduct.html', {'product':product})
-
 
 
 

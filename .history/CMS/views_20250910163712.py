@@ -1,7 +1,7 @@
 # Here write your logical code
 # This is a business logic layer 
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from SDM.models import GroceryProducts
 import json
 
@@ -146,16 +146,12 @@ def update_product(request, product_id):
 
         product = get_object_or_404(GroceryProducts, id = product_id)
 
-        product.productName = productName
-        product.brandName = brandName
-        product.cost = cost
-        product.price = price
-        product.manu_date = manu_date
-        product.exp_date = exp_date
-      
-        return HttpResponse("Product updated successfully!")
-    product = get_object_or_404(GroceryProducts, id = product_id)
-    return render(request, 'updateProduct.html', {'product':product})
+        product.productN
+
+        .
+        
+        return HttpResponse("Product saved successfully!")
+    return render(request, 'products.html')
 
 
 

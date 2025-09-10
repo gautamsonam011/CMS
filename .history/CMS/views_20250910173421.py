@@ -155,7 +155,7 @@ def update_product(request, product_id):
       
         return HttpResponse("Product updated successfully!")
     product = get_object_or_404(GroceryProducts, id = product_id)
-    return render(request, 'updateProduct.html', {'product':product})
+    return render(request, 'products.html', {'product':product})
 
 
 
