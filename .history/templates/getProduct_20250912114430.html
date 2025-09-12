@@ -8,8 +8,6 @@
         table{
             width:500px;
             height:auto;
-            margin-left: 10%;
-            border-style: 2px solid red;
         }
     </style>
 </head>
@@ -29,17 +27,16 @@
             </tr>
             </thead>
             <tbody>
-                {% for i in products %}
             <tr>
+                {% for i in products %}
                 <td>{{i.productName}}</td>
                 <td>{{i.brandName}}</td>
                 <td>{{i.cost}}</td>
                 <td>{{i.price}}</td>
                 <td>{{i.manu_date}}</td>
                 <td>{{i.exp_date}}</td>
-                
+                {% forend %}
             </tr>
-            {% endfor %}
             </tbody>
         </table>
     </form>

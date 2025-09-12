@@ -160,7 +160,7 @@ def update_product(request, product_id):
 def get_product(request):
     products = GroceryProducts.objects.all()
 
-    return render(request, 'getProduct.html',{'products':products})    
+    return render(request, '',{'products':products})    
 
 
 

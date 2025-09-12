@@ -16,5 +16,5 @@ urlpatterns = [
     path('postapi/', views.create_view),
     path('create/', views.save_product),
     path('update/<int:product_id>/', views.update_product),
-    path('getgroduct/', views.get_product),
+    path('getgroduct', views.get_product),
 ]

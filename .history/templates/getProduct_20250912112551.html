@@ -4,21 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get All Products</title>
-    <style>
-        table{
-            width:500px;
-            height:auto;
-            margin-left: 10%;
-            border-style: 2px solid red;
-        }
-    </style>
 </head>
 <body>
     <form action="" method="post">
         {% csrf_token %}
 
         <table>
-            <thead>
             <tr>
                 <th>Product Name</th>
                 <th>Brand Name</th>
@@ -27,20 +18,16 @@
                 <th>Manufacturing Date</th>
                 <th>Expiry Date</th>
             </tr>
-            </thead>
-            <tbody>
-                {% for i in products %}
             <tr>
+                {% for i in products %}
                 <td>{{i.productName}}</td>
                 <td>{{i.brandName}}</td>
                 <td>{{i.cost}}</td>
                 <td>{{i.price}}</td>
                 <td>{{i.manu_date}}</td>
                 <td>{{i.exp_date}}</td>
-                
+                {% endfor %}
             </tr>
-            {% endfor %}
-            </tbody>
         </table>
     </form>
 
