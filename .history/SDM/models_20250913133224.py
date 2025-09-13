@@ -32,7 +32,7 @@ class GroceryProducts(models.Model):
 
 class ProductQuantity(models.Model):
     product = models.OneToOneField(GroceryProducts, on_delete = models.CASCADE)  
-    quantity = models.FloatField(null=True)
+    quantity = models.Float(null=True)
     unit = models.CharField(null=True)
 
     def __str__(self):

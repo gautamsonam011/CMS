@@ -4,7 +4,6 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404
 from SDM.models import GroceryProducts
 import json
-from django.db.models import Count
 
 def client_request_response(request):
     return HttpResponse("<h1>Hello Django Project</h1>")
@@ -161,13 +160,9 @@ def update_product(request, product_id):
 def get_product(request):
     # products = GroceryProducts.objects.all()
     # products = Grocery
-    # products = GroceryProducts.objects.filter(productName='Milk')
+    products = GroceryProducts.objects.filter(productName='Milk')
 
-    products = GroceryProducts.objects.exclude(productName="Milk")
-    # total_count = GroceryProducts.objects.annotate(product_count = Count('id'))
-    total_count = GroceryProducts.objects.aggregate(product_count = Count('id'))
-    
-    return render(request, 'getProduct.html',{'products':products, 'total_count': total_count})    
+    return render(request, 'getProduct.html',{'products':products})    
 
 
 

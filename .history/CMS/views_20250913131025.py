@@ -167,7 +167,7 @@ def get_product(request):
     # total_count = GroceryProducts.objects.annotate(product_count = Count('id'))
     total_count = GroceryProducts.objects.aggregate(product_count = Count('id'))
     
-    return render(request, 'getProduct.html',{'products':products, 'total_count': total_count})    
+    return render(request, 'getProduct.html',{'products':products, "total_count": total_count})    
 
 
 
